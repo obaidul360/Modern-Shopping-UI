@@ -11,7 +11,8 @@ class PhoneInputField extends StatefulWidget {
 
 class _PhoneInputFieldState extends State<PhoneInputField> {
   String countryCode = '+880';
-  String flagAsset = 'imageslogo/bangladesh_flag.png'; // put Bangladesh flag at this path
+  String flagAsset =
+      'imageslogo/bangladesh_flag.png'; // put Bangladesh flag at this path
   // If you don't have local asset, you can use NetworkImage with a URL.
 
   @override
@@ -45,25 +46,21 @@ class _PhoneInputFieldState extends State<PhoneInputField> {
                 ),
                 const SizedBox(width: 8),
                 // Country code text
-                Text(
-                  countryCode,
-                  style: const TextStyle(fontSize: 14),
-                ),
+                Text(countryCode, style: const TextStyle(fontSize: 14)),
                 const SizedBox(width: 6),
                 // Down arrow
                 const Icon(Icons.keyboard_arrow_down, size: 20),
                 const SizedBox(width: 6),
                 // A vertical divider to separate prefix from phone input
-                Container(
-                  width: 1,
-                  height: 28,
-                  color: Colors.grey.shade300,
-                ),
+                Container(width: 1, height: 28, color: Colors.grey.shade300),
               ],
             ),
           ),
         ),
-        contentPadding: const EdgeInsets.symmetric(vertical: 14, horizontal: 12),
+        contentPadding: const EdgeInsets.symmetric(
+          vertical: 14,
+          horizontal: 12,
+        ),
         border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
       ),
     );

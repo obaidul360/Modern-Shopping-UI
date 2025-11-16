@@ -1,5 +1,3 @@
-
-
 import 'package:flutter/material.dart';
 
 class CartPage extends StatelessWidget {
@@ -8,15 +6,20 @@ class CartPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Row(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: Row(
+          children: [
+            Image.asset("assets/app_bar_share_icon.png"),
+            SizedBox(width: 125),
 
-        children: [
-          Image.asset("assets/app_bar_share_icon.png"),
-          SizedBox(width: 125,),
-
-          Text("Cart",style: TextStyle(fontSize: 25,fontWeight: FontWeight.w400),)
-        ],
-      ),),
+            Text(
+              "Cart",
+              style: TextStyle(fontSize: 25, fontWeight: FontWeight.w400),
+            ),
+          ],
+        ),
+      ),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(12),
@@ -68,7 +71,7 @@ class CartPage extends StatelessWidget {
                   ),
                 ),
               ),
-            )
+            ),
           ],
         ),
       ),
@@ -96,19 +99,14 @@ class CartPage extends StatelessWidget {
             blurRadius: 8,
             color: Colors.black12.withOpacity(0.06),
             offset: const Offset(1, 2),
-          )
+          ),
         ],
       ),
       child: Row(
         children: [
           ClipRRect(
             borderRadius: BorderRadius.circular(10),
-            child: Image.asset(
-              image,
-              height: 75,
-              width: 75,
-              fit: BoxFit.cover,
-            ),
+            child: Image.asset(image, height: 75, width: 75, fit: BoxFit.cover),
           ),
 
           const SizedBox(width: 12),
@@ -164,13 +162,15 @@ class CartPage extends StatelessWidget {
               Text(
                 quantity.toString(),
                 style: const TextStyle(
-                    fontSize: 16, fontWeight: FontWeight.bold),
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
               const SizedBox(height: 6),
               // -
-              _roundButton(Icons.remove)
+              _roundButton(Icons.remove),
             ],
-          )
+          ),
         ],
       ),
     );
@@ -204,7 +204,7 @@ class CartPage extends StatelessWidget {
             blurRadius: 8,
             color: Colors.black12.withOpacity(0.06),
             offset: const Offset(1, 2),
-          )
+          ),
         ],
       ),
       child: Column(
@@ -222,8 +222,7 @@ class CartPage extends StatelessWidget {
 
           Divider(height: 20),
 
-          _summaryRow("Total", "8540",
-              isBold: true, fontSize: 17),
+          _summaryRow("Total", "8540", isBold: true, fontSize: 17),
         ],
       ),
     );
@@ -237,11 +236,11 @@ class _summaryRow extends StatelessWidget {
   final double fontSize;
 
   const _summaryRow(
-      this.title,
-      this.value, {
-        this.isBold = false,
-        this.fontSize = 15,
-      });
+    this.title,
+    this.value, {
+    this.isBold = false,
+    this.fontSize = 15,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -269,15 +268,6 @@ class _summaryRow extends StatelessWidget {
     );
   }
 }
-
-
-
-
-
-
-
-
-
 
 /*
 import 'package:flutter/material.dart';

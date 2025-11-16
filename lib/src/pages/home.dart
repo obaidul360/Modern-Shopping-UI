@@ -12,6 +12,7 @@ class _HomePagesState extends State<HomePages> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -43,7 +44,7 @@ class _HomePagesState extends State<HomePages> {
                         child: TextField(
                           decoration: InputDecoration(
                             prefixIcon: Icon(Icons.search, size: 22),
-                            labelText: "Search Products", // Field এর label
+                            hintText: "Search Products", // Field এর label
                             border: OutlineInputBorder(), // Field এর border
                           ),
                         ),
@@ -339,7 +340,6 @@ class _HomePagesState extends State<HomePages> {
                 ),
               ),
               SizedBox(height: 08),
-
             ],
           ),
         ),

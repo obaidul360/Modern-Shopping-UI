@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../bottom_nav_bar/bottom_nav_Bar.dart';
+import '../pages/home.dart';
 import 'edit_profile.dart';
 
 class Profile extends StatefulWidget {
@@ -17,7 +19,16 @@ class _ProfileState extends State<Profile> {
         automaticallyImplyLeading: false,
         title: Row(
           children: [
-            Image.asset("assets/app_bar_share_icon.png", height: 18),
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => BottomNavBarPage()),
+                );
+              },
+              child: Image.asset("assets/app_bar_share_icon.png", height: 18),
+            ),
+
             SizedBox(width: 115),
             Text("Profile", style: TextStyle(fontSize: 22)),
           ],

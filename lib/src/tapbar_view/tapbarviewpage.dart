@@ -35,12 +35,7 @@ class TapBarViewPage extends StatelessWidget {
           ),
         ),
 
-        body: const TabBarView(
-          children: [
-            SignInPage(),
-            SignUpPage(),
-          ],
-        ),
+        body: const TabBarView(children: [SignInPage(), SignUpPage()]),
       ),
     );
   }

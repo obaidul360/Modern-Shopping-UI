@@ -10,8 +10,6 @@ class WishlistPage extends StatefulWidget {
 class _WishlistPageState extends State<WishlistPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar:AppBar(title: Text("Wishlish Page"),),
-    );
+    return Scaffold(appBar: AppBar(title: Text("Wishlish Page")));
   }
 }

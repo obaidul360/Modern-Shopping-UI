@@ -46,8 +46,8 @@ class _BottomNavBarPageState extends State<BottomNavBarPage> {
     HomePages(),
     CatagorisePage(),
     SearchPage(),
-    CartPage(),//CartPage(),
-    Profile()//WishlistPage(),
+    CartPage(), //CartPage(),
+    Profile(), //WishlistPage(),
   ];
   @override
   Widget build(BuildContext context) {

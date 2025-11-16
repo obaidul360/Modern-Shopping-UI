@@ -23,7 +23,7 @@ class _EditProfilePageState extends State<EditProfilePage> {
                   MaterialPageRoute(builder: (context) => Profile()),
                 );
               },
-              child: Image.asset("assets/app_bar_share_icon.png", height: 20),
+              child: Image.asset("assets/app_bar_share_icon.png", height: 16),
             ),
             SizedBox(width: 90),
             Text("Edit Profile", style: TextStyle(fontSize: 22)),

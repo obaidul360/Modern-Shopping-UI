@@ -18,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen> {
     });
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) =>TapBarViewPage()),//LoginPage()),
+      MaterialPageRoute(builder: (context) => TapBarViewPage()), //LoginPage()),
     );
   }
 
