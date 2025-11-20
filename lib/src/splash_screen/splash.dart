@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../form/signup.dart';
+import '../notes_app_files/screen/notes_screen.dart';
 import '../tapbar_view/tapbarviewpage.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -18,7 +19,7 @@ class _SplashScreenState extends State<SplashScreen> {
     });
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) => TapBarViewPage()), //LoginPage()),
+      MaterialPageRoute(builder: (context) => MyNotesScreen()),//TapBarViewPage()), //LoginPage()),
     );
   }
 

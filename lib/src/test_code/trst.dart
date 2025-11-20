@@ -1,83 +1,99 @@
-// phone_input_widget.dart
 import 'package:flutter/material.dart';
 
-class PhoneInputField extends StatefulWidget {
-  final TextEditingController? controller;
-  const PhoneInputField({Key? key, this.controller}) : super(key: key);
+class CheckOutPage extends StatefulWidget {
+  const CheckOutPage({super.key});
 
   @override
-  State<PhoneInputField> createState() => _PhoneInputFieldState();
+  State<CheckOutPage> createState() => _CheckOutPageState();
 }
 
-class _PhoneInputFieldState extends State<PhoneInputField> {
-  String countryCode = '+880';
-  String flagAsset =
-      'imageslogo/bangladesh_flag.png'; // put Bangladesh flag at this path
-  // If you don't have local asset, you can use NetworkImage with a URL.
-
+class _CheckOutPageState extends State<CheckOutPage> {
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      controller: widget.controller,
-      keyboardType: TextInputType.phone,
-      decoration: InputDecoration(
-        hintText: '1XXXXXXXXX',
-        // Use prefix to put a custom widget (prefixIcon has constraints)
-        prefixIconConstraints: const BoxConstraints(minWidth: 0, minHeight: 0),
-        prefixIcon: Padding(
-          padding: const EdgeInsets.only(left: 8.0, right: 6.0),
-          child: GestureDetector(
-            onTap: _onCountryTap,
-            child: Row(
-              mainAxisSize: MainAxisSize.min,
+    return Scaffold(
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Image.asset("assets/app_bar_share_icon.png", width: 20, height: 20),
+            Text(
+              "Product Details",
+              style: TextStyle(fontSize: 22, color: Colors.black),
+            ),
+            Stack(
               children: [
-                // Flag
-                Container(
-                  width: 28,
-                  height: 20,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(3),
-                    // Use AssetImage for local flag
-                    image: DecorationImage(
-                      image: AssetImage(flagAsset),
-                      fit: BoxFit.cover,
+                Image.asset("assets/lock.png", width: 40, height: 40),
+                Positioned(
+                  top: 5,
+                  right: 2,
+                  child: Container(
+                    height: 20,
+                    width: 20,
+                    decoration: BoxDecoration(
+                      color: Color(0xFFF79E45),
+                      borderRadius: BorderRadius.all(Radius.circular(10)),
+                    ),
+                    child: Center(
+                      child: Text("2", style: TextStyle(fontSize: 16)),
                     ),
                   ),
                 ),
-                const SizedBox(width: 8),
-                // Country code text
-                Text(countryCode, style: const TextStyle(fontSize: 14)),
-                const SizedBox(width: 6),
-                // Down arrow
-                const Icon(Icons.keyboard_arrow_down, size: 20),
-                const SizedBox(width: 6),
-                // A vertical divider to separate prefix from phone input
-                Container(width: 1, height: 28, color: Colors.grey.shade300),
               ],
             ),
+          ],
+        ),
+      ),
+      body: Column(
+        children: [
+          Column(
+            spacing: 5,
+            children: [
+              Container(
+                alignment: Alignment.topCenter,
+                height: 300,
+                width: 300,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage("assets/order_image.png"),
+                  ),
+                ),
+              ),
+            ],
           ),
-        ),
-        contentPadding: const EdgeInsets.symmetric(
-          vertical: 14,
-          horizontal: 12,
-        ),
-        border: OutlineInputBorder(borderRadius: BorderRadius.circular(8)),
+          SizedBox(height: 10),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            spacing: 5,
+            children: [
+              Image.asset("assets/order_image.png", height: 90, width: 70),
+              Image.asset("assets/order_image.png", height: 90, width: 70),
+              Image.asset("assets/order_image.png", height: 90, width: 70),
+            ],
+          ),
+          SizedBox(height: 10),
+          Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "Party Borkha Abaya Black",
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                Icon(Icons.favorite, size: 30, color: Color(0xCCFF8A33)),
+            ],),
+          ),
+          Text("data")
+
+
+
+        ],
       ),
     );
-  }
-
-  void _onCountryTap() async {
-    // Implement your country picker here
-    // Example: showModalBottomSheet to choose Bangladesh or others
-    // For demo we just toggle between +880 and +91:
-    setState(() {
-      if (countryCode == '+880') {
-        countryCode = '+91';
-        flagAsset = 'imageslogo/bangladesh_flag.png';
-      } else {
-        countryCode = '+880';
-        flagAsset = 'imageslogo/my_order.png';
-      }
-    });
   }
 }

@@ -1,0 +1,42 @@
+
+import 'package:flutter/material.dart';
+import '../db_notes/db.dart';
+
+
+class NoteCardScreen extends StatelessWidget {
+  const NoteCardScreen({super.key, required this.i});
+
+  final int i;
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      color: Colors.white,
+      child: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Column(
+          spacing: 5,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              spacing: 10,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Flexible(
+                  child: Text(
+                    "${NotesData.list[i]['title']}",
+                    maxLines: 1,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(fontSize: 16, fontWeight: FontWeight.w600),
+                  ),
+                ),
+                Text("${NotesData.list[i]['created_at']}", style: TextStyle(fontSize: 12)),
+              ],
+            ),
+            Text("${NotesData.list[i]['details']}", maxLines: 2, style: TextStyle(fontSize: 14)),
+          ],
+        ),
+      ),
+    );
+  }
+}
