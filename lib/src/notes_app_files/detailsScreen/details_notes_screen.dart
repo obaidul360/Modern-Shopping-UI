@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 
 class NotesDetails extends StatelessWidget {
-  const NotesDetails({super.key, required this.title, required this.date, required this.details});
+  const NotesDetails({
+    super.key,
+    required this.title,
+    required this.date,
+    required this.details,
+  });
 
   final String title;
   final String date;
@@ -11,7 +16,11 @@ class NotesDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("Note Details Screen")),
-      body: Center(child: Column(children: [Text("$title"), Text("$date"), Text("$details")])),
+      body: Center(
+        child: Column(
+          children: [Text("$title"), Text("$date"), Text("$details")],
+        ),
+      ),
     );
   }
 }

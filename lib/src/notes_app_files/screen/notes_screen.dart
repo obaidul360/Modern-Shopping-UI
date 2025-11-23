@@ -23,7 +23,10 @@ class _MyNotesScreenState extends State<MyNotesScreen> {
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
-          children: [SearchFieldScreen(), SizedBox(height: 10), noteBuilder()],
+          children: [
+            SearchFieldScreen(),
+            SizedBox(height: 10),
+            noteBuilder()],
         ),
       ),
       floatingActionButton: ElevatedButton(
@@ -37,6 +40,7 @@ class _MyNotesScreenState extends State<MyNotesScreen> {
         },
         child: Icon(Icons.add),
       ),
+
     );
   }
 

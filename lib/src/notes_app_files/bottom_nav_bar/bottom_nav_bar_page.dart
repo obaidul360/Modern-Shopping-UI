@@ -26,9 +26,9 @@ class _BottomNaviBarPageState extends State<BottomNaviBarPage> {
       body: screenList[currentScreen],
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: currentScreen,
-        onTap: (value){
+        onTap: (value) {
           setState(() {
-            currentScreen=value;
+            currentScreen = value;
           });
         },
         selectedItemColor: Colors.blue,
