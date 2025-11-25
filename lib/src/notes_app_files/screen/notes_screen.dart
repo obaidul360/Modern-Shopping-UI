@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 import '../db_notes/db.dart';
@@ -15,18 +17,32 @@ class MyNotesScreen extends StatefulWidget {
 }
 
 class _MyNotesScreenState extends State<MyNotesScreen> {
+  String currentTime = "00:00:00";
+
+  @override
+  void initState() {
+    super.initState();
+    Timer.periodic(Duration(seconds: 1), (timer) {
+      final now = DateTime.now();
+      setState(() {
+        currentTime =
+            "${now.hour.toString().padLeft(2, '0')}:${now.minute.toString().padLeft(2, '0')}:${now.second.toString().padLeft(2, '0')}";
+      });
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Notes Screen")),
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(currentTime, style: TextStyle(color: Colors.black)),
+      ),
       drawer: DrawerScreen(),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
-          children: [
-            SearchFieldScreen(),
-            SizedBox(height: 10),
-            noteBuilder()],
+          children: [SearchFieldScreen(), SizedBox(height: 10), noteBuilder()],
         ),
       ),
       floatingActionButton: ElevatedButton(
@@ -40,7 +56,6 @@ class _MyNotesScreenState extends State<MyNotesScreen> {
         },
         child: Icon(Icons.add),
       ),
-
     );
   }
 

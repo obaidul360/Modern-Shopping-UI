@@ -1,8 +1,5 @@
-import 'package:agrments/src/notes_app_files/bottom_nav_bar/bottom_nav_bar_page.dart';
-import 'package:agrments/src/profile/profile.dart';
 import 'package:agrments/src/splash_screen/splash.dart';
-import 'package:agrments/src/test_code/testfile.dart';
-import 'package:agrments/src/test_code/trst.dart';
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -17,7 +14,8 @@ class MyApp extends StatelessWidget {
     return SafeArea(
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        home:SplashScreen(),//CustomBottomNavDemo() //CheckOutPage()//SplashScreen(),
+        home:
+            SplashScreen(),
       ),
     );
   }
