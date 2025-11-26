@@ -10,6 +10,14 @@ class MySettingScreen extends StatefulWidget {
 class _MySettingScreenState extends State<MySettingScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text("This is Setting Screen"),),);
+    return Scaffold(appBar: AppBar(
+      title: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Icon(Icons.dashboard_rounded),
+          Text("Setting Page"),
+          Icon(Icons.notification_add)
+        ],
+      )),);
   }
 }
